@@ -1,35 +1,14 @@
-# AutoML Binary Classification Project
+# Задание по курсу AutoML
+
+Ссылка на данные - [Santander Customer Satisfaction](https://www.kaggle.com/competitions/santander-customer-satisfaction/overview)
 
 ## Описание задачи
-Этот проект посвящен решению задачи бинарной классификации табличных данных.
-Основная цель — построить модель, максимизирующую метрику **ROC AUC**.
+
+> From frontline support teams to C-suites, customer satisfaction is a key measure of success. Unhappy customers don't stick around. What's more, unhappy customers rarely voice their dissatisfaction before leaving.
+>
+> Santander Bank is asking Kagglers to help them identify dissatisfied customers early in their relationship. Doing so would allow Santander to take proactive steps to improve a customer's happiness before it's too late.
+>
+> In this competition, you'll work with hundreds of anonymized features to predict if a customer is satisfied or dissatisfied with their banking experience.
+
+Основная цель — построить модель, максимизирующую метрику **ROC AUC** (задача бинарной классификации).
 Целевая переменная находится в колонке `TARGET` (значения 0 или 1).
-
-## Структура репозитория
-
-*   **`data/`**: Папка с исходными данными.
-    *   `train.csv`: Обучающая выборка.
-    *   `test.csv`: Тестовая выборка для прогноза.
-*   **`eda.ipynb`**: Ноутбук с подробным разведочным анализом данных (Exploratory Data Analysis).
-    *   Анализ распределения целевой переменной.
-    *   Статистика и визуализация признаков.
-    *   Анализ корреляций и важности признаков.
-*   **`my_solution.ipynb`**: Основной ноутбук с решением задачи.
-    *   Предобработка данных и отбор признаков.
-    *   Обучение моделей (включая эксперименты с XGBoost и LightAutoML).
-    *   Валидация и оценка качества.
-*   **`submission.csv`**: Файл с предсказаниями для тестовой выборки (результат работы модели).
-
-## Используемые инструменты
-*   **Язык**: Python
-*   **Библиотеки**:
-    *   `pandas`, `numpy` — работа с данными.
-    *   `matplotlib`, `seaborn` — визуализация.
-    *   `scikit-learn` — метрики и утилиты ML.
-    *   `xgboost` — градиентный бустинг.
-    *   `lightautoml` — библиотека автоматического машинного обучения (AutoML).
-
-## Как запустить
-1.  Убедитесь, что файлы `train.csv` и `test.csv` находятся в папке `data/`.
-2.  Откройте и запустите `eda.ipynb` для ознакомления с данными.
-3.  Запустите `my_solution.ipynb` для воспроизведения обучения модели и генерации прогноза.
