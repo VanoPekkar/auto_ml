@@ -12,3 +12,33 @@
 
 Основная цель — построить модель, максимизирующую метрику **ROC AUC** (задача бинарной классификации).
 Целевая переменная находится в колонке `TARGET` (значения 0 или 1).
+
+## Структура репозитория
+
+```
+auto_ml/
+├── data/
+│   ├── train.csv              # Обучающая выборка
+│   └── test.csv               # Тестовая выборка
+├── model.ipynb                # Основной ноутбук с решением
+├── eda.ipynb                  # Разведочный анализ данных
+├── submission_lama.csv        # Предсказания LightAutoML
+├── submission_xgb.csv         # Предсказания XGBoost
+├── xgb_random_search_results.csv  # Результаты подбора гиперпараметров
+└── README.md                  # Описание проекта
+```
+
+## Подходы
+
+1. **LightAutoML** — автоматический подбор моделей и гиперпараметров (две конфигурации)
+2. **XGBoost** — ручной random search с 10-fold кросс-валидацией и early stopping
+
+## Результаты на Kaggle (private + public)
+
+Удалось победить LAMA с помощью XGBoost:
+
+### LightAutoML
+![Результат LightAutoML](kaggle_score_lama.png)
+
+### XGBoost
+![Результат XGBoost](kaggle_score_xgb.png)
